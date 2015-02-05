@@ -1,5 +1,5 @@
 {
-  "name": "dictionary.js",
+  "name": "dictionary",
   "version": "1.0.0",
   "description": "dictionary handling library for JavaScript",
   "main": "./dist/dictionary.js",
