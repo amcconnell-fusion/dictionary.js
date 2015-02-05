@@ -1,6 +1,6 @@
 'use strict';
 
-var browserify, browserifyTask, browserSync, watchify, bundleLogger, gulp, handleErrors, source, buffer, sourcemaps, config, wrap;
+var browserify, browserifyTask, browserSync, watchify, bundleLogger, gulp, handleErrors, source, buffer, sourcemaps, config, wrap, derequire;
 
 browserify = require('browserify');
 browserSync = require('browser-sync');
@@ -13,6 +13,7 @@ source = require('vinyl-source-stream');
 buffer = require('vinyl-buffer');
 config = require('../config').browserify;
 wrap = require('gulp-wrap');
+derequire = require('derequire');
 
 browserifyTask = function(callback, devMode) {
   var bundleQueue, browserifyThis;
