@@ -16,7 +16,7 @@
   // located in gulp/config.js under "browserify"
   itemToExport = 1;
 
-  require = (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+  require = !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.dictionary=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
 var storeManagerBuilder, dictionaryBuilder, buildDictionary;
@@ -129,7 +129,7 @@ var stringFormatter, nameExistsError;
 
 stringFormatter = require('../../stringFormatter');
 
-nameExistsError = 'name "{name}" is reserved for {type} constants dictionary';
+nameExistsError = 'name "{name}" is reserved for {type} dictionary';
 
 function buildNameReservedError(nameValue, store) {
   var errorText = stringFormatter.format(nameExistsError,
@@ -245,7 +245,7 @@ function addErrorHandling(options) {
 
   dictionaryErrorHandling.addErrorHandling({
     store: options.store,
-    constantsObjectName: options.constantsObjectName,
+    dictionaryObjectName: options.dictionaryObjectName,
     errorHandling: errorHandling
   });
 
@@ -412,8 +412,8 @@ module.exports = {
   format: format
 };
 
-},{}]},{},[1]);
-
+},{}]},{},[1])(1)
+});
 //# sourceMappingURL=dictionary.js.map;
 
   return require(itemToExport);
