@@ -21,7 +21,8 @@ module.exports = {
       template: src + '/_bundleTemplate.js',
       outputName: 'dictionary.js',
       require: [],
-      external: []
+      external: [],
+      standalone: 'dictionary'
     }]
   },
   production: {
