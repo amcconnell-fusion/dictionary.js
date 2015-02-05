@@ -16,13 +16,13 @@
   // located in gulp/config.js under "browserify"
   itemToExport = 1;
 
-  require = !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.dictionary=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+  require = !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.dictionary=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 'use strict';
 
 var storeManagerBuilder, dictionaryBuilder, buildDictionary;
 
-storeManagerBuilder = require('./dictionaryUtility/store/storeManagerBuilder');
-dictionaryBuilder = require('./dictionaryUtility/dictionaryBuilder');
+storeManagerBuilder = _dereq_('./dictionaryUtility/store/storeManagerBuilder');
+dictionaryBuilder = _dereq_('./dictionaryUtility/dictionaryBuilder');
 
 buildDictionary = function(options) {
   var store, getValueKey;
@@ -46,7 +46,7 @@ module.exports = {
   build: buildDictionary
 };
 
-},{"./dictionaryUtility/dictionaryBuilder":2,"./dictionaryUtility/store/storeManagerBuilder":11}],2:[function(require,module,exports){
+},{"./dictionaryUtility/dictionaryBuilder":2,"./dictionaryUtility/store/storeManagerBuilder":11}],2:[function(_dereq_,module,exports){
 'use strict';
 
 function buildDictionary(store) {
@@ -61,14 +61,14 @@ module.exports = {
   build: buildDictionary
 };
 
-},{}],3:[function(require,module,exports){
+},{}],3:[function(_dereq_,module,exports){
 'use strict';
 
 var nameExistsErrorDefinitionBuilder, valueExistsErrorDefinitionBuilder, reservedNameErrorDefinitionBuilder;
 
-nameExistsErrorDefinitionBuilder = require('./dictionaryErrors/nameExistsErrorDefinitionBuilder');
-valueExistsErrorDefinitionBuilder = require('./dictionaryErrors/valueExistsErrorDefinitionBuilder');
-reservedNameErrorDefinitionBuilder = require('./dictionaryErrors/reservedNameErrorDefinitionBuilder');
+nameExistsErrorDefinitionBuilder = _dereq_('./dictionaryErrors/nameExistsErrorDefinitionBuilder');
+valueExistsErrorDefinitionBuilder = _dereq_('./dictionaryErrors/valueExistsErrorDefinitionBuilder');
+reservedNameErrorDefinitionBuilder = _dereq_('./dictionaryErrors/reservedNameErrorDefinitionBuilder');
 
 function addErrorHandling(options) {
   var errorHandling, reservedNameErrorDefinition;
@@ -87,12 +87,12 @@ module.exports = {
   addErrorHandling: addErrorHandling
 };
 
-},{"./dictionaryErrors/nameExistsErrorDefinitionBuilder":4,"./dictionaryErrors/reservedNameErrorDefinitionBuilder":5,"./dictionaryErrors/valueExistsErrorDefinitionBuilder":6}],4:[function(require,module,exports){
+},{"./dictionaryErrors/nameExistsErrorDefinitionBuilder":4,"./dictionaryErrors/reservedNameErrorDefinitionBuilder":5,"./dictionaryErrors/valueExistsErrorDefinitionBuilder":6}],4:[function(_dereq_,module,exports){
 'use strict';
 
 var stringFormatter, nameExistsError;
 
-stringFormatter = require('../../stringFormatter');
+stringFormatter = _dereq_('../../stringFormatter');
 
 nameExistsError = 'name "{name}" is already in use, value is {value}';
 
@@ -122,12 +122,12 @@ module.exports = {
   build: buildValueExistsErrorDefinition
 };
 
-},{"../../stringFormatter":12}],5:[function(require,module,exports){
+},{"../../stringFormatter":12}],5:[function(_dereq_,module,exports){
 'use strict';
 
 var stringFormatter, nameExistsError;
 
-stringFormatter = require('../../stringFormatter');
+stringFormatter = _dereq_('../../stringFormatter');
 
 nameExistsError = 'name "{name}" is reserved for {type} dictionary';
 
@@ -164,12 +164,12 @@ module.exports = {
   build: buildReservedNameErrorDefinition
 };
 
-},{"../../stringFormatter":12}],6:[function(require,module,exports){
+},{"../../stringFormatter":12}],6:[function(_dereq_,module,exports){
 'use strict';
 
 var stringFormatter, valueExistsErrorText;
 
-stringFormatter = require('../../stringFormatter');
+stringFormatter = _dereq_('../../stringFormatter');
 
 valueExistsErrorText = 'given name {givenName} with a value of "{value}" already exists with a name of "{name}"';
 
@@ -200,7 +200,7 @@ module.exports = {
   build: buildValueExistsErrorDefinition
 };
 
-},{"../../stringFormatter":12}],7:[function(require,module,exports){
+},{"../../stringFormatter":12}],7:[function(_dereq_,module,exports){
 'use strict';
 
 function throwRelevantError(errorValue, errorDefinitions) {
@@ -232,13 +232,13 @@ module.exports = {
   build: buildErrorHandling
 };
 
-},{}],8:[function(require,module,exports){
+},{}],8:[function(_dereq_,module,exports){
 'use strict';
 
 var errorHandlingBuilder, dictionaryErrorHandling;
 
-errorHandlingBuilder = require('../errorHandlingBuilder');
-dictionaryErrorHandling = require('../dictionaryErrorHandling');
+errorHandlingBuilder = _dereq_('../errorHandlingBuilder');
+dictionaryErrorHandling = _dereq_('../dictionaryErrorHandling');
 
 function addErrorHandling(options) {
   var errorHandling = errorHandlingBuilder.build();
@@ -258,12 +258,12 @@ module.exports = {
   addToStore: addErrorHandling
 };
 
-},{"../dictionaryErrorHandling":3,"../errorHandlingBuilder":7}],9:[function(require,module,exports){
+},{"../dictionaryErrorHandling":3,"../errorHandlingBuilder":7}],9:[function(_dereq_,module,exports){
 'use strict';
 
 var storeErrorHandlingManager;
 
-storeErrorHandlingManager = require('./errorHandlingManager');
+storeErrorHandlingManager = _dereq_('./errorHandlingManager');
 
 function buildDataStore(options) {
   var storeBase;
@@ -289,7 +289,7 @@ module.exports = {
   build: buildDataStore
 };
 
-},{"./errorHandlingManager":8}],10:[function(require,module,exports){
+},{"./errorHandlingManager":8}],10:[function(_dereq_,module,exports){
 'use strict';
 
 function addSingle(nameValue, store) {
@@ -327,13 +327,13 @@ module.exports = {
   addSingle: addSingle
 };
 
-},{}],11:[function(require,module,exports){
+},{}],11:[function(_dereq_,module,exports){
 'use strict';
 
 var storeBuilder, storeManagement;
 
-storeBuilder = require('./storeBuilder');
-storeManagement = require('./storeManagement');
+storeBuilder = _dereq_('./storeBuilder');
+storeManagement = _dereq_('./storeManagement');
 
 function addPropertyErrorHandling(options) {
   Object.defineProperty(options.store,
@@ -389,7 +389,7 @@ module.exports = {
   build: buildstoreManager
 };
 
-},{"./storeBuilder":9,"./storeManagement":10}],12:[function(require,module,exports){
+},{"./storeBuilder":9,"./storeManagement":10}],12:[function(_dereq_,module,exports){
 'use strict';
 
 /*

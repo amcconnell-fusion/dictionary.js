@@ -13,7 +13,7 @@ source = require('vinyl-source-stream');
 buffer = require('vinyl-buffer');
 config = require('../config').browserify;
 wrap = require('gulp-wrap');
-derequire = require('derequire');
+derequire = require('gulp-derequire');
 
 browserifyTask = function(callback, devMode) {
   var bundleQueue, browserifyThis;
@@ -38,6 +38,7 @@ browserifyTask = function(callback, devMode) {
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write('./'))
+        .pipe(derequire())
         .pipe(wrap({ src: bundleConfig.template }))
         .pipe(gulp.dest(bundleConfig.dest))
         .on('end', reportFinished)
