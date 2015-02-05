@@ -2,7 +2,7 @@
   "name": "dictionary.js",
   "version": "1.0.0",
   "description": "dictionary handling library for JavaScript",
-  "main": "dist/dictionary.js",
+  "main": "./dist/dictionary.js",
   "repository": {
     "type": "git",
     "url": "git@github.com:fusionalliance/dictionary.js.git"
