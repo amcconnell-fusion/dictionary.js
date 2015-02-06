@@ -1,10 +1,10 @@
 (function(window, Builder) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD
-    define(Builder);
-  } else if (typeof exports === 'object') {
+  if (typeof exports === 'object') {
     // CommonJS
     module.exports = Builder();
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD
+    define(Builder);
   } else {
     // Browser Global (dictionary is your global library identifier)
     window.dictionary = Builder();
