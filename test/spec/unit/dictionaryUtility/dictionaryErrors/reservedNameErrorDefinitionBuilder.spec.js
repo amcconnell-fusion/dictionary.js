@@ -1,5 +1,10 @@
 'use strict';
-var reservedNameErrorDefinitionBuilder = require('../../../../../src/dictionaryUtility/dictionaryErrors/reservedNameErrorDefinitionBuilder');
+
+var dictionaryErrorsLibrary, reservedNameErrorDefinitionBuilder;
+
+dictionaryErrorsLibrary = require('../../../../locationHelpers/dictionaryErrorsLibrary');
+
+reservedNameErrorDefinitionBuilder = dictionaryErrorsLibrary.reservedNameErrorDefinitionBuilder;
 
 describe('nameExistsErrorDefinitionBuilder', function(){
   var reservedNameErrorDefinition, store, nameValueReserved, nameValueNotReserved, reservedWord;

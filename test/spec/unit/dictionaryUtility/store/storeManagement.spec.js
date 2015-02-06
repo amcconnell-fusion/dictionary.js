@@ -1,5 +1,7 @@
 'use strict';
 
+var storeLibrary = require('../../../../locationHelpers/storeLibrary');
+
 function createNameValue(name,value) {
   return {
     name: name,
@@ -11,7 +13,7 @@ describe('storeManagement', function() {
   var storeManagement, nameValueSingleTest, nameValueMultiTest, results;
   beforeAll(function() {
 
-    storeManagement = require('../../../../../src/dictionaryUtility/store/storeManagement');
+    storeManagement = storeLibrary.storeManagement;
 
     results = {};
     results.singleTest = {

@@ -1,5 +1,10 @@
 'use strict';
-var valueExistsErrorDefinitionBuilder = require('../../../../../src/dictionaryUtility/dictionaryErrors/valueExistsErrorDefinitionBuilder');
+
+var dictionaryErrorsLibrary, valueExistsErrorDefinitionBuilder;
+
+dictionaryErrorsLibrary = require('../../../../locationHelpers/dictionaryErrorsLibrary');
+
+valueExistsErrorDefinitionBuilder = dictionaryErrorsLibrary.valueExistsErrorDefinitionBuilder;
 
 describe('valueExistsErrorDefinitionBuilder', function(){
   var valueExistsErrorDefinition, store, nameValueGiven, nameValueMock;

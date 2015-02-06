@@ -1,10 +1,12 @@
 'use strict';
 
+var storeLibrary = require('../../../../locationHelpers/storeLibrary');
+
 describe('errorHandlingManager', function(){
   var errorHandlingManager, given, results;
 
   beforeAll(function(){
-    errorHandlingManager = require('../../../../../src/dictionaryUtility/store/errorHandlingManager');
+    errorHandlingManager = storeLibrary.errorHandlingManager;
     given = {};
     results = {};
 
