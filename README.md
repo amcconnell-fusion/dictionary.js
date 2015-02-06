@@ -1,4 +1,3 @@
-[![Stories in Ready](https://badge.waffle.io/rclanan/dictionary.js.png?label=ready&title=Ready)](https://waffle.io/rclanan/dictionary.js)
 # dictionary.js
 
 dictionary handling library for JavaScript
