@@ -22,7 +22,6 @@ module.exports = {
       outputName: 'dictionary.js',
       require: [],
       external: [],
-      standalone: 'dictionary',
       noParse: ['/node_modules/strings.js/dist/strings.js']
     }]
   },
