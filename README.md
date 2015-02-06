@@ -1,4 +1,4 @@
-[![Stories in Ready](https://badge.waffle.io/fusionalliance/dictionary.js.png?label=ready&title=Ready)](https://waffle.io/fusionalliance/dictionary.js)
+[![Stories in Ready](https://badge.waffle.io/fusionalliance/dictionary.js.png?label=ready&title=Ready)](https://waffle.io/fusionalliance/dictionary.js) [![Build Status](https://travis-ci.org/fusionalliance/dictionary.js.svg)](https://travis-ci.org/fusionalliance/dictionary.js)
 # dictionary.js
 
 dictionary handling library for JavaScript
