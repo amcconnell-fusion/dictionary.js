@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/fusionalliance/dictionary.js.png?label=ready&title=Ready)](https://waffle.io/fusionalliance/dictionary.js)
 # dictionary.js
 
 dictionary handling library for JavaScript
