@@ -38,8 +38,11 @@ browserifyTask = function(callback, devMode) {
         .pipe(buffer())
         .pipe(sourcemaps.init({ loadMaps: true }))
         .pipe(sourcemaps.write('./'))
-        .pipe(derequire())
         .pipe(wrap({ src: bundleConfig.template }))
+        .pipe(derequire([{
+          from: 'require',
+          to: '_dicRq_'
+        }]))
         .pipe(gulp.dest(bundleConfig.dest))
         .on('end', reportFinished)
         .pipe(browserSync.reload({stream:true}));

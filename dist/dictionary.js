@@ -10,19 +10,19 @@
     window.dictionary = Builder();
   }
 }(this, function() {
-  var require, itemToExport;
+  var _dicRq_, itemToExport;
 
   // this is the what is defined in browserify's "entry" item in the configBundles array.
   // located in gulp/config.js under "browserify"
   itemToExport = 1;
 
-  require = !function(e){if("object"==typeof exports&&"undefined"!=typeof module)module.exports=e();else if("function"==typeof define&&define.amd)define([],e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.dictionary=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+  _dicRq_ = (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof _dicRq_=="function"&&_dicRq_;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof _dicRq_=="function"&&_dicRq_;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dicRq_,module,exports){
 'use strict';
 
 var storeManagerBuilder, dictionaryBuilder, buildDictionary;
 
-storeManagerBuilder = _dereq_('./dictionaryUtility/store/storeManagerBuilder');
-dictionaryBuilder = _dereq_('./dictionaryUtility/dictionaryBuilder');
+storeManagerBuilder = _dicRq_('./dictionaryUtility/store/storeManagerBuilder');
+dictionaryBuilder = _dicRq_('./dictionaryUtility/dictionaryBuilder');
 
 buildDictionary = function(options) {
   var store, getValueKey;
@@ -46,7 +46,54 @@ module.exports = {
   build: buildDictionary
 };
 
-},{"./dictionaryUtility/dictionaryBuilder":2,"./dictionaryUtility/store/storeManagerBuilder":11}],2:[function(_dereq_,module,exports){
+},{"./dictionaryUtility/dictionaryBuilder":3,"./dictionaryUtility/store/storeManagerBuilder":12}],2:[function(_dicRq_,module,exports){
+(function(window, Builder) {
+  if (typeof define === 'function' && define.amd) {
+    // AMD
+    define(Builder);
+  } else if (typeof exports === 'object') {
+    // CommonJS
+    module.exports = Builder();
+  } else {
+    // Browser Global (strings is your global library identifier)
+    window.strings = Builder();
+  }
+}(this, function() {
+  var _strRq_, itemToExport;
+
+  // this is the what is defined in browserify's "entry" item in the configBundles array.
+  // located in gulp/config.js under "browserify"
+  itemToExport = 1;
+
+  _strRq_ = (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof _strRq_=="function"&&_strRq_;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof _strRq_=="function"&&_strRq_;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_strRq_,module,exports){
+'use strict';
+
+var formatting = _strRq_('./utilities/formatting');
+
+module.exports = {
+  format: formatting.format
+};
+
+},{"./utilities/formatting":2}],2:[function(_strRq_,module,exports){
+'use strict';
+
+function format(stringToFormat, values) {
+  return stringToFormat.replace(/{(\w+)}/g, function(match, value) {
+    return (values[value] !== undefined) ? values[value] : match;
+  });
+}
+
+module.exports = {
+  format: format
+};
+
+},{}]},{},[1]);
+
+//# sourceMappingURL=strings.js.map;
+
+  return _strRq_(itemToExport);
+}));
+},{}],3:[function(_dicRq_,module,exports){
 'use strict';
 
 function buildDictionary(store) {
@@ -61,14 +108,14 @@ module.exports = {
   build: buildDictionary
 };
 
-},{}],3:[function(_dereq_,module,exports){
+},{}],4:[function(_dicRq_,module,exports){
 'use strict';
 
 var nameExistsErrorDefinitionBuilder, valueExistsErrorDefinitionBuilder, reservedNameErrorDefinitionBuilder;
 
-nameExistsErrorDefinitionBuilder = _dereq_('./dictionaryErrors/nameExistsErrorDefinitionBuilder');
-valueExistsErrorDefinitionBuilder = _dereq_('./dictionaryErrors/valueExistsErrorDefinitionBuilder');
-reservedNameErrorDefinitionBuilder = _dereq_('./dictionaryErrors/reservedNameErrorDefinitionBuilder');
+nameExistsErrorDefinitionBuilder = _dicRq_('./dictionaryErrors/nameExistsErrorDefinitionBuilder');
+valueExistsErrorDefinitionBuilder = _dicRq_('./dictionaryErrors/valueExistsErrorDefinitionBuilder');
+reservedNameErrorDefinitionBuilder = _dicRq_('./dictionaryErrors/reservedNameErrorDefinitionBuilder');
 
 function addErrorHandling(options) {
   var errorHandling, reservedNameErrorDefinition;
@@ -87,17 +134,17 @@ module.exports = {
   addErrorHandling: addErrorHandling
 };
 
-},{"./dictionaryErrors/nameExistsErrorDefinitionBuilder":4,"./dictionaryErrors/reservedNameErrorDefinitionBuilder":5,"./dictionaryErrors/valueExistsErrorDefinitionBuilder":6}],4:[function(_dereq_,module,exports){
+},{"./dictionaryErrors/nameExistsErrorDefinitionBuilder":5,"./dictionaryErrors/reservedNameErrorDefinitionBuilder":6,"./dictionaryErrors/valueExistsErrorDefinitionBuilder":7}],5:[function(_dicRq_,module,exports){
 'use strict';
 
-var stringFormatter, nameExistsError;
+var strings, nameExistsError;
 
-stringFormatter = _dereq_('../../stringFormatter');
+strings = _dicRq_('strings.js');
 
 nameExistsError = 'name "{name}" is already in use, value is {value}';
 
 function buildNameExistsError(nameValue, store) {
-  var errorText = stringFormatter.format(nameExistsError,
+  var errorText = strings.format(nameExistsError,
   {
     name: nameValue.name,
     value: store.getValueKey(nameValue)
@@ -122,17 +169,17 @@ module.exports = {
   build: buildValueExistsErrorDefinition
 };
 
-},{"../../stringFormatter":12}],5:[function(_dereq_,module,exports){
+},{"strings.js":2}],6:[function(_dicRq_,module,exports){
 'use strict';
 
-var stringFormatter, nameExistsError;
+var strings, nameExistsError;
 
-stringFormatter = _dereq_('../../stringFormatter');
+strings = _dicRq_('strings.js');
 
 nameExistsError = 'name "{name}" is reserved for {type} dictionary';
 
 function buildNameReservedError(nameValue, store) {
-  var errorText = stringFormatter.format(nameExistsError,
+  var errorText = strings.format(nameExistsError,
   {
     name: nameValue.name,
     type: store.dictionaryName
@@ -164,17 +211,17 @@ module.exports = {
   build: buildReservedNameErrorDefinition
 };
 
-},{"../../stringFormatter":12}],6:[function(_dereq_,module,exports){
+},{"strings.js":2}],7:[function(_dicRq_,module,exports){
 'use strict';
 
-var stringFormatter, valueExistsErrorText;
+var strings, valueExistsErrorText;
 
-stringFormatter = _dereq_('../../stringFormatter');
+strings = _dicRq_('strings.js');
 
 valueExistsErrorText = 'given name {givenName} with a value of "{value}" already exists with a name of "{name}"';
 
 function buildValueExistsError(nameValue, store) {
-  var errorText = stringFormatter.format(valueExistsErrorText,
+  var errorText = strings.format(valueExistsErrorText,
   {
     givenName: nameValue.name,
     name: store.valueNameMap[store.getValueKey(nameValue)],
@@ -200,7 +247,7 @@ module.exports = {
   build: buildValueExistsErrorDefinition
 };
 
-},{"../../stringFormatter":12}],7:[function(_dereq_,module,exports){
+},{"strings.js":2}],8:[function(_dicRq_,module,exports){
 'use strict';
 
 function throwRelevantError(errorValue, errorDefinitions) {
@@ -232,13 +279,13 @@ module.exports = {
   build: buildErrorHandling
 };
 
-},{}],8:[function(_dereq_,module,exports){
+},{}],9:[function(_dicRq_,module,exports){
 'use strict';
 
 var errorHandlingBuilder, dictionaryErrorHandling;
 
-errorHandlingBuilder = _dereq_('../errorHandlingBuilder');
-dictionaryErrorHandling = _dereq_('../dictionaryErrorHandling');
+errorHandlingBuilder = _dicRq_('../errorHandlingBuilder');
+dictionaryErrorHandling = _dicRq_('../dictionaryErrorHandling');
 
 function addErrorHandling(options) {
   var errorHandling = errorHandlingBuilder.build();
@@ -258,12 +305,12 @@ module.exports = {
   addToStore: addErrorHandling
 };
 
-},{"../dictionaryErrorHandling":3,"../errorHandlingBuilder":7}],9:[function(_dereq_,module,exports){
+},{"../dictionaryErrorHandling":4,"../errorHandlingBuilder":8}],10:[function(_dicRq_,module,exports){
 'use strict';
 
 var storeErrorHandlingManager;
 
-storeErrorHandlingManager = _dereq_('./errorHandlingManager');
+storeErrorHandlingManager = _dicRq_('./errorHandlingManager');
 
 function buildDataStore(options) {
   var storeBase;
@@ -289,7 +336,7 @@ module.exports = {
   build: buildDataStore
 };
 
-},{"./errorHandlingManager":8}],10:[function(_dereq_,module,exports){
+},{"./errorHandlingManager":9}],11:[function(_dicRq_,module,exports){
 'use strict';
 
 function addSingle(nameValue, store) {
@@ -327,13 +374,13 @@ module.exports = {
   addSingle: addSingle
 };
 
-},{}],11:[function(_dereq_,module,exports){
+},{}],12:[function(_dicRq_,module,exports){
 'use strict';
 
 var storeBuilder, storeManagement;
 
-storeBuilder = _dereq_('./storeBuilder');
-storeManagement = _dereq_('./storeManagement');
+storeBuilder = _dicRq_('./storeBuilder');
+storeManagement = _dicRq_('./storeManagement');
 
 function addPropertyErrorHandling(options) {
   Object.defineProperty(options.store,
@@ -389,32 +436,9 @@ module.exports = {
   build: buildstoreManager
 };
 
-},{"./storeBuilder":9,"./storeManagement":10}],12:[function(_dereq_,module,exports){
-'use strict';
+},{"./storeBuilder":10,"./storeManagement":11}]},{},[1]);
 
-/*
-example:
-var format = 'this is test {testGiven} for a showing how to use {name}';
-var formattedString = format(fomat, {
-  testGiven: 'stringFormatter',
-  name: 'format'
-});
- */
-
-//TODO: Evaluate if there is a need to pull this into it's own library? Perhaps if we get more utility functions
-function format(stringToFormat, values) {
-  return stringToFormat.replace(/{(\w+)}/g, function(match, value) {
-    return (values[value] !== undefined) ? values[value] : match;
-  });
-}
-
-module.exports = {
-  format: format
-};
-
-},{}]},{},[1])(1)
-});
 //# sourceMappingURL=dictionary.js.map;
 
-  return require(itemToExport);
+  return _dicRq_(itemToExport);
 }));
