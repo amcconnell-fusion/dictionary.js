@@ -48,12 +48,12 @@ _dcMd_.exports = {
 
 },{"./dictionaryUtility/dictionaryBuilder":3,"./dictionaryUtility/store/storeManagerBuilder":12}],2:[function(_dicRq_,_dcMd_,exports){
 (function(window, Builder) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD
-    define(Builder);
-  } else if (typeof exports === 'object') {
+  if (typeof exports === 'object') {
     // CommonJS
     _dcMd_.exports = Builder();
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD
+    define(Builder);
   } else {
     // Browser Global (strings is your global library identifier)
     window.strings = Builder();
