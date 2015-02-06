@@ -59,6 +59,7 @@
     "pretty-hrtime": "^1.0.0",
     "require-dir": "^0.1.0",
     "sinon": "^1.12.2",
+    "strings.js": "git://github.com/fusionalliance/strings.js",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
     "watchify": "^2.2.1"

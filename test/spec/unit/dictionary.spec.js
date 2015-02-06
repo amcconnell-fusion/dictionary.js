@@ -1,9 +1,9 @@
 'use strict';
 
-var sinon, storeLibrary, dictionaryUtilityLibrary, helpersLibrary, storeLibrary;
+var sinon, storeLibrary, dictionaryUtilityLibrary, baseLibrary, storeLibrary;
 
 sinon = require('sinon');
-helpersLibrary = require('../../locationHelpers/helpersLibrary');
+baseLibrary = require('../../locationHelpers/baseLibrary');
 dictionaryUtilityLibrary = require('../../locationHelpers/dictionaryUtilityLibrary');
 storeLibrary = require('../../locationHelpers/storeLibrary');
 
@@ -41,7 +41,7 @@ function runTests(given, mocks){
     return mocks.dictionaryBuilder.build;
   });
 
-  results.dictionary = helpersLibrary.dictionary.build(given);
+  results.dictionary = baseLibrary.dictionary.build(given);
 
   dictionaryUtilityLibrary.dictionaryBuilder.build.restore();
   storeLibrary.storeManagerBuilder.build.restore();

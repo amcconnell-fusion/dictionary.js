@@ -1,13 +1,13 @@
 'use strict';
 
-var stringFormatter, nameExistsError;
+var strings, nameExistsError;
 
-stringFormatter = require('../../stringFormatter');
+strings = require('strings.js');
 
 nameExistsError = 'name "{name}" is reserved for {type} dictionary';
 
 function buildNameReservedError(nameValue, store) {
-  var errorText = stringFormatter.format(nameExistsError,
+  var errorText = strings.format(nameExistsError,
   {
     name: nameValue.name,
     type: store.dictionaryName

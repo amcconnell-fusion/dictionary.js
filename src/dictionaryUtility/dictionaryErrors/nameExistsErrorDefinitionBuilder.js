@@ -1,13 +1,13 @@
 'use strict';
 
-var stringFormatter, nameExistsError;
+var strings, nameExistsError;
 
-stringFormatter = require('../../stringFormatter');
+strings = require('strings.js');
 
 nameExistsError = 'name "{name}" is already in use, value is {value}';
 
 function buildNameExistsError(nameValue, store) {
-  var errorText = stringFormatter.format(nameExistsError,
+  var errorText = strings.format(nameExistsError,
   {
     name: nameValue.name,
     value: store.getValueKey(nameValue)

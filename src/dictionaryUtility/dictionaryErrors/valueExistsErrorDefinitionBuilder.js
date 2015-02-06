@@ -1,13 +1,13 @@
 'use strict';
 
-var stringFormatter, valueExistsErrorText;
+var strings, valueExistsErrorText;
 
-stringFormatter = require('../../stringFormatter');
+strings = require('strings.js');
 
 valueExistsErrorText = 'given name {givenName} with a value of "{value}" already exists with a name of "{name}"';
 
 function buildValueExistsError(nameValue, store) {
-  var errorText = stringFormatter.format(valueExistsErrorText,
+  var errorText = strings.format(valueExistsErrorText,
   {
     givenName: nameValue.name,
     name: store.valueNameMap[store.getValueKey(nameValue)],
