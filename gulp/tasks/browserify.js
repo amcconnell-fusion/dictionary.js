@@ -42,6 +42,9 @@ browserifyTask = function(callback, devMode) {
         .pipe(derequire([{
           from: 'require',
           to: '_dicRq_'
+        },{
+          from: 'module',
+          to: '_dcMd_'
         }]))
         .pipe(gulp.dest(bundleConfig.dest))
         .on('end', reportFinished)
